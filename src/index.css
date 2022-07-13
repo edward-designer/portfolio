@@ -71,22 +71,25 @@ h6 {
   10. Other enhancements
 */
 * {
+  /*scroll-behavior: smooth;*/
+}
+html {
   scroll-behavior: smooth;
 }
 
 :root {
   --primary-color: #fff;
-  --secondary-color: rgb(96, 238, 219);
-  --accent-color: rgb(100, 255, 218);
-  --text-color: #333;
-  --link-color: rgb(100, 255, 218);
-  --hover-color: rgb(66, 62, 89);
+  --secondary-color: rgb(0, 130, 110);
+  --accent-color: rgba(255, 191, 0, 0.892);
+  --text-color: #555;
+  --link-color: rgb(108, 122, 113);
+  --hover-color: rgb(6, 154, 162);
   --background-color: #fff;
 }
 
 [data-theme="dark"] {
   --primary-color: #000;
-  --secondary-color: rgb(0, 88, 78);
+  --secondary-color: rgb(0, 148, 131);
   --accent-color: rgb(111, 209, 224);
   --text-color: rgb(115, 134, 156);
   --link-color: rgb(68, 123, 139);
@@ -99,7 +102,39 @@ h6 {
 @tailwind utilities;
 
 @layer components {
+  /* Works on Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #555 #222;
+  }
+
+  /* Works on Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #222;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #555;
+    border-radius: 20px;
+    border: 3px solid #222;
+  }
   h3 {
-    @apply text-4xl text-text-color m-3 mt-6 ml-0;
+    @apply text-4xl text-secondary-color m-3 mt-5 ml-0;
+  }
+  .title {
+    mix-blend-mode: exclusion !important;
+    filter: invert(1) !important;
+  }
+  .scrollbar-hidden::-webkit-scrollbar {
+    display: none; /* webkit */
+  }
+  .scrollbar-hidden {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    scroll-behavior: auto;
   }
 }

@@ -8,7 +8,7 @@ const ThemeWrapper = ({ children }: { children: ReactNode }) => {
   };
   return (
     <div data-theme={theme} className="h-screen">
-      <div className="fixed top-0 right-0 flex items-center justify-end p-2 gap-1 text-lg">
+      <div className="fixed top-3 right-5 flex items-center justify-end p-2 gap-1 text-lg z-50">
         <span>☀️</span>
         <label className="inline-block h-5 relative w-10" htmlFor="checkbox">
           <input

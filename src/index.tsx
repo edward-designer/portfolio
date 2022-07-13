@@ -6,6 +6,7 @@ import "./index.css";
 
 import ThemeWrapper from "./components/ThemeWrapper";
 import ScrollObserver from "./utils/scrollObserver";
+import ViewPortObserver from "./utils/viewportObserver";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -13,9 +14,11 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <ScrollObserver>
-      <ThemeWrapper>
-        <App />
-      </ThemeWrapper>
+      <ViewPortObserver>
+        <ThemeWrapper>
+          <App />
+        </ThemeWrapper>
+      </ViewPortObserver>
     </ScrollObserver>
   </React.StrictMode>
 );
