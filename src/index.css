@@ -68,11 +68,8 @@ h6 {
   isolation: isolate;
 }
 /*
-  10. Other enhancements
+  10. Other enhancements - note that ele.scrollLeft etc. incrementally would not be able to work with smooth scrolling as the browser may set the initial value to 0 
 */
-* {
-  /*scroll-behavior: smooth;*/
-}
 html {
   scroll-behavior: smooth;
 }
