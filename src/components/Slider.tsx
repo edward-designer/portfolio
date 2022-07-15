@@ -20,12 +20,11 @@ const Slider = ({
   const refContainer = useRef<HTMLDivElement>(null);
   const refContent = useRef<HTMLDivElement>(null);
   const refEnabled = useRef<boolean>(false);
-  const toRight = useRef<boolean>(true);
 
   useEffect(() => {
     if (
       refContent.current &&
-      innerWidth < refContent.current.scrollWidth &&
+      innerWidth < refContent.current.scrollWidth / 2 &&
       inFocus
     ) {
       refEnabled.current = true;
@@ -40,20 +39,9 @@ const Slider = ({
       const { current: elContainer } = refContainer;
       const { current: elContent } = refContent;
       if (elContainer && elContent) {
-        if (toRight.current) {
-          refScrollX.current += 1;
-        } else {
-          refScrollX.current -= 1;
-        }
-
-        if (
-          refScrollX.current >=
-          elContent.scrollWidth - elContainer.clientWidth
-        ) {
-          toRight.current = false;
-        }
-        if (refScrollX.current <= 0) {
-          toRight.current = true;
+        refScrollX.current += 1;
+        if (refScrollX.current >= elContent.scrollWidth / 2 + 11) {
+          refScrollX.current = 0;
         }
         elContent.style.transform = `translate(-${refScrollX.current}px)`;
       }
@@ -63,13 +51,11 @@ const Slider = ({
   return (
     <div
       ref={refContainer}
-      className="relative m-10 w-[99vw] ml-[-50vw] left-[50%] overflow-x-scroll scrollbar-hidden"
+      className="relative m-10 mt-20 w-[99vw] ml-[-50vw] left-[50%] overflow-x-scroll scrollbar-hidden"
     >
-      <div
-        ref={refContent}
-        className="flex gap-6 [&>*]:shrink-0 transition-all duration-75"
-      >
-        {children}
+      <div ref={refContent} className="flex gap-6 [&>*]:shrink-0">
+        <div className="flex gap-6 [&>*]:shrink-0">{children}</div>
+        <div className="flex gap-6 [&>*]:shrink-0">{children}</div>
       </div>
     </div>
   );

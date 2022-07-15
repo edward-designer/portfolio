@@ -134,4 +134,7 @@ html {
     scrollbar-width: none; /* Firefox */
     scroll-behavior: auto;
   }
+  [data-theme="dark"] img {
+    filter: invert(0.2);
+  }
 }

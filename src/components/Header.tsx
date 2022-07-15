@@ -10,10 +10,12 @@ const Header = () => {
   const { scrollY } = useContext(ScrollContext);
 
   let progress = 0;
+
   const { current: elContainer } = refContainer;
   if (elContainer) {
     progress = Math.min(1, scrollY / elContainer.clientHeight);
   }
+  
   return (
     <div
       ref={refContainer}

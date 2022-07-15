@@ -1,0 +1,11 @@
+Model Information:
+* title:	2009 - 2011 iMac, 27 inch
+* source:	https://sketchfab.com/3d-models/2009-2011-imac-27-inch-7b3732dbf3d14ecbb919373233efcfd1
+* author:	Ne0nGenisis (https://sketchfab.com/Ne0nGenisis)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "2009 - 2011 iMac, 27 inch" (https://sketchfab.com/3d-models/2009-2011-imac-27-inch-7b3732dbf3d14ecbb919373233efcfd1) by Ne0nGenisis (https://sketchfab.com/Ne0nGenisis) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
